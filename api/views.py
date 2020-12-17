@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
-# Create your views here.
+import json
+
+
+@csrf_exempt
+def predict(request):
+    body = json.loads(request.body)
+    print(body)
+
+    return HttpResponse(status=200)
