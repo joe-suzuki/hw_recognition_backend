@@ -15,8 +15,8 @@ def base64_to_numpy(base64_string):
 
     img_gray_norm_batch = np.expand_dims(img_gray_norm, 0)
 
-    plt.imshow(img_gray_norm_batch[0, :, :])
-    plt.colorbar()
-    plt.show()
+    # plt.imshow(img_gray_norm_batch[0, :, :])
+    # plt.colorbar()
+    # plt.show()
 
-    return None
+    return img_gray_norm_batch
