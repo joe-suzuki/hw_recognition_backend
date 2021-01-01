@@ -11,8 +11,9 @@ from .tensorflow import predict_mnist
 def predict(request):
     body = json.loads(request.body)
     base64_string = body["image"].split(",")[1]
+    model_type = body["model_type"]
     numpy_image = image_preprocessing.base64_to_numpy(base64_string)
-    predicted_label, prediction_prob = predict_mnist.predict(numpy_image)
+    predicted_label, prediction_prob = predict_mnist.predict(numpy_image, model_type)
 
     response_body = {
         "predicted_label": str(predicted_label),
