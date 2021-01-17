@@ -7,7 +7,7 @@ def predict(image, model_type):
         model_name = "augmented_model.h5"
     else:
         model_name = "simple_model.h5"
-    loaded_model = tf.keras.models.load_model(f"api/tensorflow/saved_models/{model_name}")
+    loaded_model = tf.keras.models.load_model(f"api/ml/saved_models/{model_name}")
     prediction = loaded_model.predict(image)
     predicted_label = np.argmax(prediction)
     prediction_prob = prediction[0].tolist()

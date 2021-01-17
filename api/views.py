@@ -3,8 +3,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 import json
 
-from .tensorflow import image_preprocessing
-from .tensorflow import predict_mnist
+from .ml import image_preprocessing
+from .ml import predict_mnist
 
 
 @csrf_exempt
